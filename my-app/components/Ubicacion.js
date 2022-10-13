@@ -7,7 +7,8 @@ import { Marker } from 'react-native-maps';
 export default function Ubicacion() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-
+  const [latitud, setLatitud] = useState(0);
+  const [longitud, setLongitud] = useState(0);
   useEffect(() => {
     (async () => {
 
@@ -27,14 +28,16 @@ export default function Ubicacion() {
     text = errorMsg;
   } else if (location) {
     text = JSON.stringify(location);
+    console.log(text)
   }
 
   return (
     <View style={styles.container}>
       <Marker coordinate={{
-        latitude: 37.78825,
-        longitude: -122.4324
+        latitude: latitud,
+        longitude: longitud
       }}></Marker>
+      <Text>{text}</Text>
     </View>
   );
 }
