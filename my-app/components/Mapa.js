@@ -7,8 +7,8 @@ export default function Mapa() {
     return (
         <>
             <View style={styles.container}>
-                <Ubicacion></Ubicacion>
-                <MapView style={styles.map} />
+                
+                <MapView style={styles.map}><Ubicacion></Ubicacion></MapView>
             </View>
         </>
     )
