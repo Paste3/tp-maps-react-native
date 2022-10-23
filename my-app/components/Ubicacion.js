@@ -8,15 +8,17 @@ export default function Ubicacion() {
   const [error, setErrorMsg] = useState("")
   const [latitud, setLatitud] = useState(0);
   const [longitud, setLongitud] = useState(0);
+  
+  
   useEffect(() => {
     (async () => {
-
+      // Pedir permiso de ubicacion al celular
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
         return;
       }
-
+      // Traer la ubicacion actual
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
       JSON.stringify(location);
@@ -31,6 +33,7 @@ export default function Ubicacion() {
 
   return (
     <>
+    // devolver la ubicacion actual
       <Marker coordinate={{
         latitude: latitud,
         longitude: longitud

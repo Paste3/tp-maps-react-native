@@ -12,6 +12,7 @@ export default function Mapa() {
                 <MapView style={styles.map}>
                     <Ubicacion></Ubicacion>
                     <>
+                    // Traer los marcadores de las ubicaciones puestas en Lugares.js
                         {
                             Lugares.map(
                                 (i) => (

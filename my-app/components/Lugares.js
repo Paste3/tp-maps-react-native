@@ -1,3 +1,5 @@
+// coordenadas y nombres de los lugares :)
+
 export default Lugares = [
     {
         id: 0,
