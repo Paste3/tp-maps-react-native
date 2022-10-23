@@ -9,6 +9,7 @@ export default function Mapa() {
     return (
         <>
             <View style={styles.container}>
+                // Aca el componente MapView trae el mapa(viene de la libreria "react-native-maps")
                 <MapView style={styles.map}>
                     <Ubicacion></Ubicacion>
                     <>
